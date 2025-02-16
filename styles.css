@@ -1,3 +1,4 @@
+/* 统一样式 */
 body {
     font-family: "Comic Sans MS", "Microsoft YaHei", sans-serif;
     max-width: 600px;
@@ -175,4 +176,96 @@ button:hover {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-5px); }
     75% { transform: translateX(5px); }
+}
+
+/* 为手机设备调整字体大小和按钮样式 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    #food-display {
+        font-size: 2.2em; /* 调整字体大小 */
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+        margin: 8px;
+    }
+
+    .progress-bar {
+        width: 250px; /* 限制进度条宽度 */
+        height: 12px;
+    }
+
+    .progress {
+        height: 100%;
+        background-color: #ff9999;
+        transition: width 0.1s linear;
+    }
+
+    /* 调整食物列表对话框 */
+    .dialog-content, .confirm-content {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .dialog input {
+        padding: 10px;
+        font-size: 0.9em;
+        width: 100%;
+    }
+
+    /* 让现有食物列表适应屏幕 */
+    .existing-foods {
+        max-height: 150px;
+        overflow-y: auto;
+    }
+
+    .food-item {
+        font-size: 0.8em;
+    }
+
+    .delete-btn {
+        font-size: 1.0em;
+    }
+
+    /* 调整浮动食物动画 */
+    .floating-food {
+        font-size: 1.2em;
+    }
+}
+
+/* 手机屏幕更小时进行进一步优化 */
+@media (max-width: 480px) {
+    body {
+        max-width: 100%;
+        margin: 10px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    #food-display {
+        font-size: 1.8em;
+    }
+
+    .progress-bar {
+        width: 200px;
+        height: 10px;
+    }
+
+    .dialog-content, .confirm-content {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .dialog input {
+        padding: 8px;
+        font-size: 0.9em;
+        width: 100%;
+    }
 }
