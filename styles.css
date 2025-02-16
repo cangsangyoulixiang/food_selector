@@ -1,8 +1,8 @@
 body {
     font-family: "Comic Sans MS", "Microsoft YaHei", sans-serif;
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 10px;
     text-align: center;
     position: relative;
     overflow-x: hidden;
@@ -15,19 +15,26 @@ body {
     background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
 }
 
+h1 {
+    font-size: 1.8rem;
+    margin: 15px 0;
+    color: #ff6b6b;
+}
+
 #food-display {
-    font-size: 2.8em;
-    margin: 30px 0;
-    min-height: 70px;
+    font-size: 2rem;
+    margin: 20px 0;
+    min-height: 60px;
     color: #ff6b6b;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     font-weight: bold;
+    padding: 10px;
 }
 
 button {
     padding: 12px 24px;
-    font-size: 1.1em;
-    margin: 10px;
+    font-size: 1rem;
+    margin: 8px;
     cursor: pointer;
     background-color: #ff9999;
     color: white;
@@ -35,6 +42,8 @@ button {
     border-radius: 25px;
     transition: all 0.3s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 300px;
 }
 
 button:hover {
@@ -44,10 +53,11 @@ button:hover {
 }
 
 .progress-bar {
-    width: 300px;
-    height: 15px;
+    width: 80%;
+    max-width: 300px;
+    height: 12px;
     background-color: #ffe0e0;
-    margin: 20px auto;
+    margin: 15px auto;
     border-radius: 10px;
     overflow: hidden;
     display: none;
@@ -63,11 +73,12 @@ button:hover {
 
 .floating-food {
     position: fixed;
-    font-size: 1.5em;
+    font-size: 1.2rem;
     pointer-events: none;
     animation: float 3s ease-out forwards;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     font-weight: bold;
+    z-index: 999;
 }
 
 @keyframes float {
@@ -76,7 +87,6 @@ button:hover {
     100% { opacity: 0; transform: scale(0.8) translateY(-200px); }
 }
 
-/* Dialog and Confirmation styles */
 .dialog, .confirm-dialog {
     display: none;
     position: fixed;
@@ -87,21 +97,22 @@ button:hover {
     background: rgba(0,0,0,0.5);
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .dialog-content, .confirm-content {
     background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    max-width: 400px;
-    width: 90%;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    max-width: 90%;
+    width: 85%;
 }
 
 .dialog input {
-    padding: 12px;
-    margin: 10px;
-    width: 80%;
+    padding: 10px;
+    margin: 8px 0;
+    width: 90%;
     border: 2px solid #ffb3b3;
     border-radius: 15px;
     font-size: 1em;
@@ -114,34 +125,31 @@ button:hover {
 }
 
 .existing-foods {
-    max-height: 200px;
+    max-height: 180px;
     overflow-y: auto;
-    margin: 15px 0;
-    padding: 10px;
+    margin: 12px 0;
+    padding: 8px;
     background: #fff5f5;
-    border-radius: 10px;
+    border-radius: 8px;
     text-align: left;
 }
 
 .existing-foods h3 {
     margin: 0 0 10px 0;
     color: #ff6b6b;
+    font-size: 1rem;
 }
 
 .food-item {
     display: inline-flex;
     align-items: center;
     margin: 5px;
-    padding: 5px 10px;
+    padding: 4px 8px;
     background: #ffebeb;
     border-radius: 15px;
-    font-size: 0.9em;
+    font-size: 0.9rem;
     color: #ff6b6b;
     transition: all 0.3s;
-}
-
-.food-item:hover {
-    background: #ffe0e0;
 }
 
 .delete-btn {
@@ -156,14 +164,10 @@ button:hover {
     transition: all 0.3s;
 }
 
-.delete-btn:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
 .confirm-buttons button {
     margin: 0 10px;
     padding: 8px 16px;
+    width: auto;
 }
 
 .angry-button {
@@ -175,4 +179,65 @@ button:hover {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-5px); }
     75% { transform: translateX(5px); }
+}
+
+/* 移动端适配 */
+@media (max-width: 480px) {
+    body {
+        margin: 10px auto;
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+
+    #food-display {
+        font-size: 1.8rem;
+        margin: 15px 0;
+        min-height: 50px;
+        padding: 8px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin: 6px;
+        width: 90%;
+    }
+
+    .progress-bar {
+        height: 10px;
+        margin: 12px auto;
+    }
+
+    .dialog-content, .confirm-content {
+        padding: 20px;
+        width: 85%;
+    }
+
+    .dialog input {
+        font-size: 0.9rem;
+    }
+
+    .existing-foods {
+        max-height: 150px;
+    }
+
+    .food-item {
+        font-size: 0.8rem;
+    }
+
+    .floating-food {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 20px;
+    }
 }
