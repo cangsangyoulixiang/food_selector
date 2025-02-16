@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>今天吃什么？</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS -->
+</head>
+<body>
+    <h1>今天吃什么？ 🍽️</h1>
+    <div id="food-display">🎲 准备就绪</div>
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
+    <button id="start-btn">✨ 开始选择！</button>
+    <button id="add-btn">🍳 添加新食物</button>
+
+    <!-- 添加食物对话框 -->
+    <div id="dialog" class="dialog">
+        <div class="dialog-content">
+            <h2>添加新食物 🍴</h2>
+            <input type="text" id="new-food" placeholder="输入新食物">
+            <div class="existing-foods">
+                <h3>已有食物：</h3>
+                <div id="existing-foods-list"></div>
+            </div>
+            <button id="confirm-add">确认添加 ✅</button>
+            <button id="cancel-add">取消 ❌</button>
+        </div>
+    </div>
+
+    <!-- 删除确认对话框 -->
+    <div id="confirm-dialog" class="confirm-dialog">
+        <div class="confirm-content">
+            <p>确定要删除这个食物吗？</p>
+            <div class="confirm-buttons">
+                <button id="confirm-delete">确定</button>
+                <button id="cancel-delete">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- 引入外部JavaScript -->
+</body>
+</html>
